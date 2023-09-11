@@ -2,10 +2,7 @@ package DesenvolvimentoSistemas.Sorteador.Service;
 
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.stream.IntStream;
+import java.util.*;
 
 @Service
 public class S_Sorteador {
@@ -33,8 +30,12 @@ public class S_Sorteador {
             int valor = random.nextInt(fimNumero) + iniNumero;
             listaSorteio.add(valor);
 
-            if (crescente == true) {
-                
+            if (semRepeticao) {
+                return (List) new TreeSet<Integer>(listaSorteio.subList(0, qtdeNumero));
+            }
+
+            if (crescente) {
+                Collections.sort(listaSorteio);
             }
 
         }

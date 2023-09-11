@@ -15,7 +15,9 @@ public class C_Sorteador {
     @PostMapping("/")
     public String calSorteador(@RequestParam("qtdeNumero") int qtdeNumero,
                                @RequestParam("iniNumero") int iniNumero,
-                               @RequestParam("fimNumero") int fimNumero) {
+                               @RequestParam("fimNumero") int fimNumero,
+                               @RequestParam("crescente") boolean crescente,
+                               @RequestParam("semRepeticao") boolean semRepeticao) {
 
         return "x";
 
