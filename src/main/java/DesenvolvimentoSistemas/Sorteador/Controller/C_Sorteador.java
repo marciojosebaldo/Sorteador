@@ -9,6 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class C_Sorteador {
+
+    private final S_Sorteador s_sorteador;
+
+    public C_Sorteador(S_Sorteador s_sorteador) {
+        this.s_sorteador = s_sorteador;
+    }
+
     @GetMapping("/")
     public String getHome() {
         return "Home/home";
@@ -18,11 +25,13 @@ public class C_Sorteador {
     public String calSorteador(@RequestParam("qtdeNumero") int qtdeNumero,
                                @RequestParam("iniNumero") int iniNumero,
                                @RequestParam("fimNumero") int fimNumero,
-                               @RequestParam("crescente") boolean crescente,
-                               @RequestParam("semRepeticao") boolean semRepeticao,
+                               @RequestParam(value = "crescente", required = false) boolean crescente,
+                               @RequestParam(value = "semRepeticao", required = false) boolean semRepeticao,
                                Model model) {
 
-        S_Sorteador s_sorteador = new S_Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao);
+        s_sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao);
+
+        // Testar no Accordion se o value true dispensa acima a colocagem do required
 
         return "Resultado/resultado";
     }

@@ -22,25 +22,25 @@
         </div>
         <div class="row">
             <h2>Sortear </h2>
-            <div class="input-group mb-3" id="qtdeNumero">
+            <div class="input-group mb-3">
                 <div class="input-group-prepend">
                 </div>
-                <input type="number" class="form-control" aria-label="qtdeNumer" aria-describedby="basic-addon1">
+                <input id="qtdeNumero" name="qtdeNumero" type="number" class="form-control" aria-label="qtdeNumer" aria-describedby="basic-addon1">
             </div>
             <h2> número(s)</h2>
         </div>
         <div class="row">
             <h2>entre </h2>
-            <div class="input-group mb-3" id="iniNumero">
+            <div class="input-group mb-3">
                 <div class="input-group-prepend">
                 </div>
-                <input type="number" class="form-control" aria-label="iniNumero" aria-describedby="basic-addon1">
+                <input id="iniNumero" name="iniNumero" type="number" class="form-control" aria-label="iniNumero" aria-describedby="basic-addon1">
             </div>
             <h2> e </h2>
-            <div class="input-group mb-3" id="fimNumero">
+            <div class="input-group mb-3">
                 <div class="input-group-prepend">
                 </div>
-                <input type="number" class="form-control" aria-label="fimNumero" aria-describedby="basic-addon1">
+                <input  id="fimNumero" name="fimNumero" type="number" class="form-control" aria-label="fimNumero" aria-describedby="basic-addon1">
             </div>
         </div>
         <!--        Accordion-->
@@ -55,27 +55,34 @@
                 <div id="extAccordion" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                      data-bs-parent="#accordionSorteador">
                     <div class="accordion-body">
-<!--                        Opção 1-->
-                        <div class="input-group mb-3">
+                        <!--                        Opção 1-->
+                        <div  class="input-group mb-3">
                             <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                                <input id="crescente" name="crescente" class="form-check-input mt-0" type="checkbox" value="true"
+                                       aria-label="Checkbox for following text input">
                             </div>
-                            <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Ordenar resultados em ordem crescente">
+                            <input type="text" class="form-control" aria-label="Text input with checkbox"
+                                   placeholder="Ordenar resultados em ordem crescente">
                         </div>
-<!--                        Opção 2-->
+                        <!--                        Opção 2-->
                         <div class="input-group mb-3">
                             <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                                <input id="semRepeticao" name="semRepeticao" class="form-check-input mt-0" type="checkbox" value="true"
+                                       aria-label="Checkbox for following text input">
                             </div>
-                            <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Permitir repetição de números">
+                            <input type="text" class="form-control" aria-label="Text input with checkbox"
+                                   placeholder="Permitir repetição de números">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-<!--        Botão de envio-->
-        <div class="row mx-auto">
-            <button id="btnSortear" class="btn btn-primary">SORTEAR AGORA!</button>
+        <!--        Botão de envio-->
+        <div class="row">
+            <div class="col-sm-6">
+                <input value="SORTEAR AGORA" type="submit" class="btn btn-primary"/>
+            </div>
+            <div class="col-sm-6 text-right"></div>
         </div>
     </form>
 </div>
