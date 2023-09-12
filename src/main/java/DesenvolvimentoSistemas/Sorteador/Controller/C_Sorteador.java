@@ -1,6 +1,8 @@
 package DesenvolvimentoSistemas.Sorteador.Controller;
 
+import DesenvolvimentoSistemas.Sorteador.Service.S_Sorteador;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,10 +19,11 @@ public class C_Sorteador {
                                @RequestParam("iniNumero") int iniNumero,
                                @RequestParam("fimNumero") int fimNumero,
                                @RequestParam("crescente") boolean crescente,
-                               @RequestParam("semRepeticao") boolean semRepeticao) {
+                               @RequestParam("semRepeticao") boolean semRepeticao,
+                               Model model) {
 
-        return "x";
+        S_Sorteador s_sorteador = new S_Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao);
 
+        return "Resultado/resultado";
     }
-
 }
