@@ -3,7 +3,6 @@ package DesenvolvimentoSistemas.Sorteador.Model;
 
 public class M_Sorteador {
 
-    
     private int qtdeNumero;
     private int iniNumero;
     private int fimNumero;
