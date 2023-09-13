@@ -14,7 +14,7 @@ public class S_Sorteador {
         this.m_sorteador = m_sorteador;
     }
 
-    public static List Sorteador(int qtdeNumero, int iniNumero, int fimNumero, Boolean crescente, Boolean semRepeticao) {
+    public static M_Sorteador Sorteador(int qtdeNumero, int iniNumero, int fimNumero, Boolean crescente, Boolean semRepeticao) {
 
         List<Integer> listaSorteio = new ArrayList<>();
         Random random = new Random();
@@ -24,7 +24,7 @@ public class S_Sorteador {
             listaSorteio.add(valor);
 
             if (semRepeticao) {
-                return (List) new TreeSet<Integer>(listaSorteio.subList(0, qtdeNumero));
+                new TreeSet<Integer>(listaSorteio.subList(0, qtdeNumero));
             }
 
             if (crescente) {
@@ -32,6 +32,6 @@ public class S_Sorteador {
             }
         }
 
-        return listaSorteio;
+        return m_sorteador;
     }
 }
