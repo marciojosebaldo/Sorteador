@@ -1,6 +1,5 @@
 package DesenvolvimentoSistemas.Sorteador.Controller;
 
-import DesenvolvimentoSistemas.Sorteador.Model.M_Sorteador;
 import DesenvolvimentoSistemas.Sorteador.Service.S_Sorteador;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +29,7 @@ public class C_Sorteador {
                                @RequestParam(value = "semRepeticao", required = false) boolean semRepeticao,
                                Model model) {
 
-        M_Sorteador m_sorteador = S_Sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao);
+        s_sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao);
 
         return "Resultado/resultado";
     }

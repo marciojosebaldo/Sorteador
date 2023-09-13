@@ -1,6 +1,5 @@
 package DesenvolvimentoSistemas.Sorteador.Service;
 
-import DesenvolvimentoSistemas.Sorteador.Model.M_Sorteador;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -8,30 +7,24 @@ import java.util.*;
 @Service
 public class S_Sorteador {
 
-    private static M_Sorteador m_sorteador;
+    public static ArrayList<Integer> Sorteador(int qtdeNumero, int iniNumero, int fimNumero, Boolean crescente, Boolean semRepeticao) {
 
-    public S_Sorteador(M_Sorteador m_sorteador) {
-        this.m_sorteador = m_sorteador;
-    }
-
-    public static M_Sorteador Sorteador(int qtdeNumero, int iniNumero, int fimNumero, Boolean crescente, Boolean semRepeticao) {
-
-        List<Integer> listaSorteio = new ArrayList<>();
+        ArrayList<Integer> listaSorteio = new ArrayList<>();
         Random random = new Random();
 
         for (int i = 0; i < qtdeNumero; i++) {
-            int valor = random.nextInt(fimNumero) + iniNumero;
+            Integer valor = random.nextInt(fimNumero) + iniNumero;
             listaSorteio.add(valor);
 
-            if (semRepeticao) {
-                new TreeSet<Integer>(listaSorteio.subList(0, qtdeNumero));
-            }
+//            if (semRepeticao) {
+//                new TreeSet<Integer>(listaSorteio.subList(0, qtdeNumero));
+//            }
 
             if (crescente) {
                 Collections.sort(listaSorteio);
             }
         }
 
-        return m_sorteador;
+        return listaSorteio;
     }
 }
