@@ -7,24 +7,29 @@ import java.util.*;
 @Service
 public class S_Sorteador {
 
-    public static ArrayList<Integer> Sorteador(int qtdeNumero, int iniNumero, int fimNumero, Boolean crescente, Boolean semRepeticao) {
+    public static int[] Sorteador(int qtdeNumero, int iniNumero, int fimNumero, Boolean crescente, Boolean semRepeticao) {
 
-        ArrayList<Integer> listaSorteio = new ArrayList<>();
+        int[] listaSorteio = new int[qtdeNumero];
         Random random = new Random();
 
-        for (int i = 0; i < qtdeNumero; i++) {
+        for (int i = 0; i < listaSorteio.length; i++) {
             Integer valor = random.nextInt(fimNumero) + iniNumero;
-            listaSorteio.add(valor);
+            listaSorteio[i] = valor;
+        }
 
-//            if (semRepeticao) {
-//                new TreeSet<Integer>(listaSorteio.subList(0, qtdeNumero));
-//            }
+        if (semRepeticao) {
+            for (int i = 0; i < listaSorteio.length; i++) {
+                for (int j = 0; j < listaSorteio.length; j++) {
 
-            if (crescente) {
-                Collections.sort(listaSorteio);
+                }
             }
         }
 
+        if (crescente) {
+        }
+
         return listaSorteio;
+
     }
+
 }
