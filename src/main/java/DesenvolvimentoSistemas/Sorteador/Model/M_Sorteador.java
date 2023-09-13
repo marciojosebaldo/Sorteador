@@ -1,6 +1,8 @@
 package DesenvolvimentoSistemas.Sorteador.Model;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class M_Sorteador {
 
     private int qtdeNumero;

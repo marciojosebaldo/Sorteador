@@ -31,8 +31,11 @@ public class C_Sorteador {
 
         s_sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao);
 
-        // Testar no Accordion se o value true dispensa acima a colocagem do required
+        return "Resultado/resultado";
+    }
 
+    @GetMapping("/resultado")
+    public String getResultado() {
         return "Resultado/resultado";
     }
 }
