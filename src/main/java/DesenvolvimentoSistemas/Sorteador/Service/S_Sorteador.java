@@ -32,15 +32,8 @@ public class S_Sorteador {
         }
 
         if (crescente) {
-            for (int i = 0; i < listaSorteio.length; i++) {
-                for (int j = 0; j < listaSorteio.length; j++) {
-                    if (listaSorteio[j] < listaSorteio[i]) {
-                        int auxiliar = listaSorteio[i];
-                        listaSorteio[i] = listaSorteio[j];
-                        listaSorteio[j] = auxiliar;
-                    }
-                }
-            }
+
+            listaSorteio = Arrays.stream(listaSorteio).sorted().toArray();
         }
 
         return listaSorteio;
