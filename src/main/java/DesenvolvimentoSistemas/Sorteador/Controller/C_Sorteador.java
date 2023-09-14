@@ -10,12 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class C_Sorteador {
 
-    private final S_Sorteador s_sorteador;
-
-    public C_Sorteador(S_Sorteador s_sorteador) {
-        this.s_sorteador = s_sorteador;
-    }
-
     @GetMapping("/")
     public String getHome() {
         return "Home/home";
@@ -29,7 +23,7 @@ public class C_Sorteador {
                                @RequestParam(value = "semRepeticao", required = false) boolean semRepeticao,
                                Model model) {
 
-        s_sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao);
+        model.addAttribute("resultado", S_Sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao));
 
         return "Resultado/resultado";
     }

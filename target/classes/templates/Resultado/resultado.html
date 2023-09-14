@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -10,12 +11,13 @@
 <body>
 <div class="container">
     <h1 class="text-center mt-5">Resultado do Sorteio:</h1>
-    <!--    <div th:if="$(resultado)" class="mt-5 text-center">-->
-    <div>
 
-    </div>
+    <tr th:each="resultado: ${resultado}">
+        <h2>
+        <td th:text="${resultado}" />
+        </h2>
+    </tr>
 
-</div>
 </div>
 </body>
 </html>
