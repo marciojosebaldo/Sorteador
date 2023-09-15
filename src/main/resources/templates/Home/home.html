@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -12,10 +12,14 @@
             integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
             crossorigin="anonymous"></script>
 
+    <script src="js/sortear.js" defer></script>
+    <script src="js/validaEnvio.js"></script>
+
     <title>Sorteador</title>
 </head>
 <body>
 <div class="container">
+    <!--<div th:if="${mensagemErro}" th:utext="${mensagem}"></div>-->
     <div class="row">
         <h1>Sorteador de Números</h1>
     </div>
@@ -84,7 +88,7 @@
     <!--        Botão de envio-->
     <div class="row">
         <div class="col-sm-6">
-            <input id="btnSortear" value="SORTEAR AGORA" type="submit" class="btn btn-primary"/>
+            <a id="btnSortear" class="btn btn-primary" href="/resultado">SORTEAR AGORA</a>
         </div>
         <div class="col-sm-6 text-right"></div>
     </div>

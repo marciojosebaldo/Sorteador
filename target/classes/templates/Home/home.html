@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -12,79 +12,86 @@
             integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
             crossorigin="anonymous"></script>
 
+    <script src="js/sortear.js" defer></script>
+    <script src="js/validaEnvio.js"></script>
+
     <title>Sorteador</title>
 </head>
 <body>
 <div class="container">
-    <form action="/" method="post">
-        <div class="row">
-            <h1>Sorteador de Números</h1>
-        </div>
-        <div class="row">
-            <h2>Sortear </h2>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                </div>
-                <input id="qtdeNumero" name="qtdeNumero" type="number" class="form-control" aria-label="qtdeNumer" aria-describedby="basic-addon1">
+    <!--<div th:if="${mensagemErro}" th:utext="${mensagem}"></div>-->
+    <div class="row">
+        <h1>Sorteador de Números</h1>
+    </div>
+    <div class="row">
+        <h2>Sortear </h2>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
             </div>
-            <h2> número(s)</h2>
+            <input id="qtdeNumero" name="qtdeNumero" type="number" class="form-control" aria-label="qtdeNumer"
+                   aria-describedby="basic-addon1">
         </div>
-        <div class="row">
-            <h2>entre </h2>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                </div>
-                <input id="iniNumero" name="iniNumero" type="number" class="form-control" aria-label="iniNumero" aria-describedby="basic-addon1">
+        <h2> número(s)</h2>
+    </div>
+    <div class="row">
+        <h2>entre </h2>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
             </div>
-            <h2> e </h2>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                </div>
-                <input  id="fimNumero" name="fimNumero" type="number" class="form-control" aria-label="fimNumero" aria-describedby="basic-addon1">
-            </div>
+            <input id="iniNumero" name="iniNumero" type="number" class="form-control" aria-label="iniNumero"
+                   aria-describedby="basic-addon1">
         </div>
-        <!--        Accordion-->
-        <div class="accordion" id="accordionSorteador">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="umAccordion">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Opções do Sorteio
-                    </button>
-                </h2>
-                <div id="extAccordion" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                     data-bs-parent="#accordionSorteador">
-                    <div class="accordion-body">
-                        <!--                        Opção 1-->
-                        <div  class="input-group mb-3">
-                            <div class="input-group-text">
-                                <input id="crescente" name="crescente" class="form-check-input mt-0" type="checkbox" value="true"
-                                       aria-label="Checkbox for following text input">
-                            </div>
-                            <input type="text" class="form-control" aria-label="Text input with checkbox"
-                                   placeholder="Ordenar resultados em ordem crescente">
+        <h2> e </h2>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            </div>
+            <input id="fimNumero" name="fimNumero" type="number" class="form-control" aria-label="fimNumero"
+                   aria-describedby="basic-addon1">
+        </div>
+    </div>
+    <!--        Accordion-->
+    <div class="accordion" id="accordionSorteador">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="umAccordion">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Opções do Sorteio
+                </button>
+            </h2>
+            <div id="extAccordion" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                 data-bs-parent="#accordionSorteador">
+                <div class="accordion-body">
+                    <!--                        Opção 1-->
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input id="crescente" name="crescente" class="form-check-input mt-0" type="checkbox"
+                                   value="true"
+                                   aria-label="Checkbox for following text input">
                         </div>
-                        <!--                        Opção 2-->
-                        <div class="input-group mb-3">
-                            <div class="input-group-text">
-                                <input id="semRepeticao" name="semRepeticao" class="form-check-input mt-0" type="checkbox" value="true"
-                                       aria-label="Checkbox for following text input">
-                            </div>
-                            <input type="text" class="form-control" aria-label="Text input with checkbox"
-                                   placeholder="Não permitir repetição de números">
+                        <input type="text" class="form-control" aria-label="Text input with checkbox"
+                               placeholder="Ordenar resultados em ordem crescente">
+                    </div>
+                    <!--                        Opção 2-->
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input id="semRepeticao" name="semRepeticao" class="form-check-input mt-0" type="checkbox"
+                                   value="true"
+                                   aria-label="Checkbox for following text input">
                         </div>
+                        <input type="text" class="form-control" aria-label="Text input with checkbox"
+                               placeholder="Não permitir repetição de números">
                     </div>
                 </div>
             </div>
         </div>
-        <!--        Botão de envio-->
-        <div class="row">
-            <div class="col-sm-6">
-                <input id="btnSortear" value="SORTEAR AGORA" type="submit" class="btn btn-primary"/>
-            </div>
-            <div class="col-sm-6 text-right"></div>
+    </div>
+    <!--        Botão de envio-->
+    <div class="row">
+        <div class="col-sm-6">
+            <a id="btnSortear" class="btn btn-primary" href="/resultado">SORTEAR AGORA</a>
         </div>
-    </form>
+        <div class="col-sm-6 text-right"></div>
+    </div>
 </div>
 </body>
 </html>

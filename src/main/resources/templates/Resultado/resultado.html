@@ -1,23 +1,12 @@
-<!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Resultado</title>
-</head>
-<body>
-<div class="container">
-    <h1 class="text-center mt-5">Resultado do Sorteio:</h1>
+<h1 class="text-center mt-5" xmlns:th="http://www.thymeleaf.org"">Resultado do Sorteio:</h1>
 
-    <tr th:each="resultado: ${resultado}">
+   <tr th:each="resultado: ${resultado}">
         <h2>
         <td th:text="${resultado}" />
         </h2>
     </tr>
 
-</div>
 </body>
 </html>

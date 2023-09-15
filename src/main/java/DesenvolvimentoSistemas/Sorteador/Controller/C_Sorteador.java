@@ -25,6 +25,14 @@ public class C_Sorteador {
 
         model.addAttribute("resultado", S_Sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao));
 
+        return "redirect:/";
+    }
+
+    @GetMapping("/resultado")
+    public String getResultado() {
         return "Resultado/resultado";
     }
+
+
+
 }
