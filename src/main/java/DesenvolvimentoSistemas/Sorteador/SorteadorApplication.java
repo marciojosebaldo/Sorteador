@@ -10,4 +10,10 @@ public class SorteadorApplication {
 		SpringApplication.run(SorteadorApplication.class, args);
 	}
 
+	// Falta horário
+	// CSS
+	// Evitar o looping infinito
+	// Concluir a ordem crescente
+	// Colocar os dados do corpo do resultado no Sorteador
+
 }
