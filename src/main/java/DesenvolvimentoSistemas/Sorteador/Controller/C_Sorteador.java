@@ -1,6 +1,7 @@
 package DesenvolvimentoSistemas.Sorteador.Controller;
 
 import DesenvolvimentoSistemas.Sorteador.Service.S_Sorteador;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,18 +22,18 @@ public class C_Sorteador {
                                @RequestParam("fimNumero") int fimNumero,
                                @RequestParam(value = "crescente", required = false) boolean crescente,
                                @RequestParam(value = "semRepeticao", required = false) boolean semRepeticao,
-                               Model model) {
+                               /*Model model*/
+                                HttpSession session) {
 
-        model.addAttribute("resultado", S_Sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao));
+        //model.addAttribute("resultado", S_Sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao));
+        session.setAttribute("resultado", S_Sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao));
 
-        return "redirect:/";
+        return "redirect:/Resultado";
     }
 
-    @GetMapping("/resultado")
-    public String getResultado() {
+    @GetMapping("/Resultado")
+    public String getResultado(HttpSession session) {
         return "Resultado/resultado";
     }
-
-
 
 }
