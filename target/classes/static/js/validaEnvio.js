@@ -21,7 +21,7 @@ function validaEnvio() { {}
                 fimNumero: fimNumero
             },
             success: function(data) {
-                $("#resultado").text("");
+                $("#resultado").text(""); //Apaga o resultado retornado pelo Controller e não deixa acumular o resultado. Precisa incluir a div com classe resultado
                 for(let i = 0; i < data.length; i++){
                     $(".container").append('<h1>'+data[i]+'<h1>');
                 }
