@@ -32,7 +32,6 @@ public class S_Sorteador {
         }
 
         if (crescente) {
-
             listaSorteio = Arrays.stream(listaSorteio).sorted().toArray();
         }
 

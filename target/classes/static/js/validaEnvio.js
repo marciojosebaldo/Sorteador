@@ -11,7 +11,7 @@ function validaEnvio() { {}
         mensagem: "Oops! A quantidade de números é menor do que o intervalo. Você pode permitir a repetição"
     }
 
-    if(podeEnviar) {
+    if(validador) {
         $.ajax({
             type: "POST",
             url: "/resultado",
@@ -21,9 +21,9 @@ function validaEnvio() { {}
                 fimNumero: fimNumero
             },
             success: function(data) {
-                $("#mensagemErro").text("");
-                if(data.sucesso) {
-                    window.location.href = "/resultado";
+                $("#resultado").text("");
+                for(let i = 0; i < data.length; i++){
+                    $(".container").append('<h1>'+data[i]+'<h1>');
                 }
             },
             error: function() {
