@@ -3,6 +3,6 @@ $("#btnSortear").click(function(event){
     $.get("/resultado", function(data) {
         $(".container").html(data);
         $("#btnSortear").click(validaEnvio);
-        history.pushState({}, '', "/"); // Pode manipular a URL em evento padrão
+        history.pushState({}, '', "/resultado");
     });
 });
