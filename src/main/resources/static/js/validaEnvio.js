@@ -8,8 +8,8 @@ function validaEnvio() {
     if (((fimNumero - iniNumero) > qtdeNumero) && semRepeticao == true) {
         validador = false;
     }
-}
 
+}
 function campoVazio() {
     if (campo == '') {
         return true;

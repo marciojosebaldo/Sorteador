@@ -1,4 +1,5 @@
 function validaEnvio() {
+<!--
     let validador = true;
     let semRepeticao = $("#semRepeticao").val();
     let qtdeNumero = $("#qtdeNumero").val();
@@ -8,8 +9,9 @@ function validaEnvio() {
     if (((fimNumero - iniNumero) > qtdeNumero) && semRepeticao == true) {
         validador = false;
     }
+    -->
 }
-
+<!--
 function campoVazio() {
     if (campo == '') {
         return true;
@@ -17,3 +19,4 @@ function campoVazio() {
         return false;
     }
 }
+-->

@@ -22,17 +22,18 @@ public class C_Sorteador {
                                @RequestParam("fimNumero") int fimNumero,
                                @RequestParam(value = "crescente", required = false) boolean crescente,
                                @RequestParam(value = "semRepeticao", required = false) boolean semRepeticao,
-                               /*Model model*/
-                                HttpSession session) {
+                               Model model
+                                /*HttpSession session*/) {
 
-        //model.addAttribute("resultado", S_Sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao));
-        session.setAttribute("resultado", S_Sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao));
+        model.addAttribute("resultado", S_Sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao));
+        //session.setAttribute("resultado", S_Sorteador.Sorteador(qtdeNumero, iniNumero, fimNumero, crescente, semRepeticao));
 
         return "redirect:/Resultado";
     }
 
-    @GetMapping("/Resultado")
-    public String getResultado(HttpSession session) {
+    @GetMapping("/resultado")
+    public String getResultado(Model model) {
+        model.getAttribute("resultado");
         return "Resultado/resultado";
     }
 
