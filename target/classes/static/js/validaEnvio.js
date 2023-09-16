@@ -25,6 +25,7 @@ function validaEnvio() { {}
                 for(let i = 0; i < data.length; i++){
                     $("#resultado").append('<h1>'+data[i]+'<h1>'); // .container funcionava, mas os números se acumulavam
                 }
+                $("#resultado").append("Quantidade sorteada: " + data.length);
             },
             error: function() {
                 $('#mensagemErro').append("Falha na comunicação com o servidor");
