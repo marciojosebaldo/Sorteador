@@ -21,13 +21,12 @@ public class S_Sorteador {
             for (int i = 0; i < listaSorteio.length; i++) {
                 int auxiliar = listaSorteio[i];
                 for (int j = 0; j < listaSorteio.length; j++) {
-                    if (auxiliar == listaSorteio[j] & j != i) {
+                    if (auxiliar == listaSorteio[j] && j != i) {
                         auxiliar = random.nextInt(fimNumero) + iniNumero;
-                    } else {
-                        listaSorteio[i] = auxiliar;
+                        j = -1; // Resetar o loop interno para verificar novamente
                     }
-
                 }
+                listaSorteio[i] = auxiliar;
             }
         }
 

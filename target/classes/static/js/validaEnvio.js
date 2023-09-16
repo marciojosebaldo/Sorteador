@@ -1,6 +1,7 @@
 function validaEnvio() { {}
     let validador = true;
-    let semRepeticao = $("#semRepeticao").val();
+    let semRepeticao = $("#semRepeticao").prop("checked");
+    let crescente = $("#crescente").prop("checked");
     let qtdeNumero = $("#qtdeNumero").val();
     let iniNumero = $("#iniNumero").val();
     let fimNumero = $("#fimNumero").val();
@@ -18,7 +19,9 @@ function validaEnvio() { {}
             data: {
                 qtdeNumero: qtdeNumero,
                 iniNumero: iniNumero,
-                fimNumero: fimNumero
+                fimNumero: fimNumero,
+                semRepeticao: semRepeticao,
+                crescente: crescente
             },
             success: function(data) {
                 $("#resultadoVetor").text(""); //Apaga o resultado retornado pelo Controller e não deixa acumular o resultado. Precisa incluir a div com classe resultado

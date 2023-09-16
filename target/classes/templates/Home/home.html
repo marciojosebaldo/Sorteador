@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
 
     <meta charset="UTF-8">
@@ -21,7 +21,6 @@
 </head>
 <body>
 <div class="container">
-    <div th:if="${mensagemErro}" th:utext="${mensagemErro}"></div>
     <div class="row">
         <h1>Sorteador de Números</h1>
     </div>
@@ -51,29 +50,45 @@
                    aria-describedby="basic-addon1">
         </div>
     </div>
+        <!--Checkbox-->
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="crescente" name="crescente">
+        <label class="form-check-label" for="crescente">
+            Ordenar números
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="semRepeticao" name="semRepeticao">
+        <label class="form-check-label" for="semRepeticao">
+            Não repetir números
+        </label>
+    </div>
+
+
     <!--        Accordion-->
+    <!--
     <div class="accordion" id="accordionSorteador">
         <div class="accordion-item">
-            <h2 class="accordion-header" id="umAccordion">
+            <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Opções do Sorteio
+                        data-bs-target="#extAccordion" aria-expanded="true" aria-controls="collapseOne">
+                    Opções de Sorteio
                 </button>
             </h2>
-            <div id="extAccordion" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            <div id="extAccordion" class="accordion-collapse collapse" aria-labelledby="headingOne"
                  data-bs-parent="#accordionSorteador">
                 <div class="accordion-body">
-                    <!--                        Opção 1-->
+
                     <div class="input-group mb-3">
                         <div class="input-group-text">
                             <input id="crescente" name="crescente" class="form-check-input mt-0" type="checkbox"
-                                   value="true"
+                                   value="checked"
                                    aria-label="Checkbox for following text input">
                         </div>
                         <input type="text" class="form-control" aria-label="Text input with checkbox"
                                placeholder="Ordenar resultados em ordem crescente">
                     </div>
-                    <!--                        Opção 2-->
+
                     <div class="input-group mb-3">
                         <div class="input-group-text">
                             <input id="semRepeticao" name="semRepeticao" class="form-check-input mt-0" type="checkbox"
@@ -87,9 +102,10 @@
             </div>
         </div>
     </div>
+-->
     <!--    Botão de envio-->
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 mt-3">
             <a id="btnSortear" class="btn btn-primary">SORTEAR AGORA</a>
         </div>
         <div class="col-sm-6 text-right"></div>
