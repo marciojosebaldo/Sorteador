@@ -28,7 +28,6 @@ function validaEnvio() { {}
                 }
                 $("#resultadoQtde").append("Quantidade sorteada: " + data.length);
 
-
             },
             error: function() {
                 $('#mensagemErro').append("Falha na comunicação com o servidor");
