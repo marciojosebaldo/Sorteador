@@ -27,6 +27,7 @@ function validaEnvio() { {}
                     $("#resultadoVetor").append('<h1>'+data[i]+'<h1>'); // .container funcionava, mas os números se acumulavam
                 }
                 $("#resultadoQtde").append("Quantidade sorteada: " + data.length);
+                dataHora();
 
             },
             error: function() {
@@ -42,4 +43,9 @@ function campoVazio() {
     } else {
         return false;
     }
+}
+
+function dataHora() {
+    const d = new Date();
+    $("#dataHora").text(d.toLocaleDateString() + ' ' + d.toLocaleTimeString() );
 }
