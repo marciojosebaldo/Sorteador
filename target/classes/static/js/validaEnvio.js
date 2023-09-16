@@ -21,11 +21,14 @@ function validaEnvio() { {}
                 fimNumero: fimNumero
             },
             success: function(data) {
-                $("#resultado").text(""); //Apaga o resultado retornado pelo Controller e não deixa acumular o resultado. Precisa incluir a div com classe resultado
+                $("#resultadoVetor").text(""); //Apaga o resultado retornado pelo Controller e não deixa acumular o resultado. Precisa incluir a div com classe resultado
+                $("#resultadoQtde").text("");
                 for(let i = 0; i < data.length; i++){
-                    $("#resultado").append('<h1>'+data[i]+'<h1>'); // .container funcionava, mas os números se acumulavam
+                    $("#resultadoVetor").append('<h1>'+data[i]+'<h1>'); // .container funcionava, mas os números se acumulavam
                 }
-                $("#resultado").append("Quantidade sorteada: " + data.length);
+                $("#resultadoQtde").append("Quantidade sorteada: " + data.length);
+
+
             },
             error: function() {
                 $('#mensagemErro').append("Falha na comunicação com o servidor");
