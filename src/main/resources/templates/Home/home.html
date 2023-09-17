@@ -51,19 +51,35 @@
         </div>
     </div>
 
-        <!--Checkbox-->
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="crescente" name="crescente">
-        <label class="form-check-label" for="crescente">
-            Ordenar números
-        </label>
+    <!-- Accordion -->
+    <div class="accordion" id="accordionSorteador">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOpcoes" aria-expanded="false" aria-controls="collapseOpcoes">
+                    Opções de Sorteio
+                </button>
+            </h2>
+            <div id="collapseOpcoes" class="accordion-collapse collapse" data-bs-parent="#accordionSorteador">
+                <div class="accordion-body">
+                    <!--Checkbox1-->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="crescente" name="crescente">
+                        <label class="form-check-label" for="crescente">
+                            Ordenar números
+                        </label>
+                    </div>
+                    <!--Checkbox2-->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="semRepeticao" name="semRepeticao">
+                        <label class="form-check-label" for="semRepeticao">
+                            Não repetir números
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="semRepeticao" name="semRepeticao">
-        <label class="form-check-label" for="semRepeticao">
-            Não repetir números
-        </label>
-    </div>
+
 
     <!--    Botão de envio-->
     <div class="row">
