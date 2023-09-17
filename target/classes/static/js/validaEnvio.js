@@ -1,4 +1,4 @@
-function validaEnvio() { {}
+function validaEnvio() {
     let validador = true;
     let semRepeticao = $("#semRepeticao").prop("checked");
     let crescente = $("#crescente").prop("checked");
@@ -9,6 +9,7 @@ function validaEnvio() { {}
     $("#mensagemErro").text("");
     if (semRepeticao && ((fimNumero - iniNumero + 1) < qtdeNumero)) {
         $("#mensagemErro").append("A quantidade de números é menor do que o intervalo. Você pode permitir a repetição");
+        validador = false;
         return;
     }
 
@@ -52,3 +53,5 @@ function dataHora() {
     const d = new Date();
     $("#dataHora").text(d.toLocaleDateString() + ' ' + d.toLocaleTimeString() );
 }
+
+$("#btnSortear").click(validaEnvio);
