@@ -9,8 +9,8 @@ public class SorteadorApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SorteadorApplication.class, args);
 	}
-	
-	// Evitar o looping infinito
+
+	// Evitar o looping infinito no service
 	// Sorteio entre ini e fim na página de resultado
 	// CSS
 	// Indentar o código

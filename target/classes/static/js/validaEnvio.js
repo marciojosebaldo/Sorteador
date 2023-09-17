@@ -7,9 +7,9 @@ function validaEnvio() { {}
     let fimNumero = $("#fimNumero").val();
 
     $("#mensagemErro").text("");
-    if (((fimNumero - iniNumero) > qtdeNumero) && semRepeticao == true) {
-        validador = false;
-        mensagem: "Oops! A quantidade de números é menor do que o intervalo. Você pode permitir a repetição"
+    if (semRepeticao && ((fimNumero - iniNumero + 1) < qtdeNumero)) {
+        $("#mensagemErro").append("A quantidade de números é menor do que o intervalo. Você pode permitir a repetição");
+        return;
     }
 
     if(validador) {

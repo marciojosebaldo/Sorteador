@@ -23,7 +23,7 @@ public class S_Sorteador {
                 for (int j = 0; j < listaSorteio.length; j++) {
                     if (auxiliar == listaSorteio[j] && j != i) {
                         auxiliar = random.nextInt(fimNumero) + iniNumero;
-                        j = -1; // Resetar o loop interno para verificar novamente
+                        j = -1;
                     }
                 }
                 listaSorteio[i] = auxiliar;
