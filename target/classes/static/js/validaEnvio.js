@@ -27,12 +27,13 @@ function validaEnvio() {
             success: function(data) {
                 $("#resultadoVetor").text(""); //Apaga o resultado retornado pelo Controller e não deixa acumular o resultado. Precisa incluir a div com classe resultado
                 $("#resultadoQtde").text("");
+                $("#intervalo").text("");
                 for(let i = 0; i < data.length; i++){
                     $("#resultadoVetor").append('<h1>'+data[i]+'<h1>'); // .container funcionava, mas os números se acumulavam
                 }
-                $("#resultadoQtde").append("Quantidade sorteada: " + data.length);
                 dataHora();
-
+                $("#resultadoQtde").append("<h3>Quantidade sorteada:</h3>" + "Quantidade sorteada: " + data.length);
+                $("#intervalo").append("<h3>Sorteio entre:</h3>" + iniNumero + " e " + fimNumero);
             },
             error: function() {
                 $('#mensagemErro').append("Falha na comunicação com o servidor");
@@ -51,7 +52,7 @@ function campoVazio() {
 
 function dataHora() {
     const d = new Date();
-    $("#dataHora").text(d.toLocaleDateString() + ' ' + d.toLocaleTimeString() );
+    $("#dataHora").html("<h3>Data do sorteio:</h3> " + d.toLocaleDateString() + ' ' + d.toLocaleTimeString() );
 }
 
 $("#btnSortear").click(validaEnvio);
