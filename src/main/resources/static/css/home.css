@@ -71,3 +71,36 @@ h1 {
     font-weight: bold;
     margin-bottom: 10px;
 }
+
+#resultadoVetor {
+    font-size: 18px;
+    white-space: nowrap;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#resultadoVetor h1 {
+    margin: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #87CEFA;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#resultadoVetor h1:empty {
+    width: 40px;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}

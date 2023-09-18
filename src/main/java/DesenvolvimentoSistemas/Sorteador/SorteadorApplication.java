@@ -9,8 +9,4 @@ public class SorteadorApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SorteadorApplication.class, args);
 	}
-
-	// CSS
-	// Indentar o código
-
 }
