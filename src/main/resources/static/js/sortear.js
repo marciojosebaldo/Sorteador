@@ -1,1 +1,0 @@
-$("#btnSortear").click(validaEnvio);
