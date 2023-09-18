@@ -1,7 +1,6 @@
 package DesenvolvimentoSistemas.Sorteador.Service;
 
 import DesenvolvimentoSistemas.Sorteador.Controller.C_CondicaoNaoAtendida;
-import DesenvolvimentoSistemas.Sorteador.Controller.C_Sorteador;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
